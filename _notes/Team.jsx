@@ -47,7 +47,6 @@ const Team = props => {
                 <div>
                     <input type="radio" name="vs" value={vs} onChange={_ => setVs(4)} /> 4vs4
                     <input type="radio" name="vs" value={vs} onChange={_ => setVs(5)} /> 5vs5
-                    {/* <input type="number" name="vs" value={vs} onChange={e => setVs(e.target.value)} max="10" required/> */}
                 </div>
 
                  <button onClick={e => submit(e)}>Gerar times</button>
