@@ -1,4 +1,4 @@
-import { useContext, useState, useEffect } from 'react';
+import { useContext, useState } from 'react';
 import { GameContext } from "../../store/GameProvider";
 
 import InputList from '../InputList';
@@ -20,7 +20,7 @@ const Game = () => {
     // useEffect(() => {
     const submit = () => {
         if (list.length && vs) {
-            setGame<string[], IOptions>({ list, options: { vs, random } });
+            setGame({ list, options: { vs, random } });
             setVisible("players");
         } else
             console.log("submith failed");

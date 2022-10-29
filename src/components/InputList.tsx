@@ -74,7 +74,7 @@ const playersArrToString = (players: string[]) => {
     return str;
 };
 
-const tempList = "1 - Pedro\n2 - Lucas\n3- João\n4- Marcos\n5 -Paula\n6 -Secão\n7 Gui\n8 Manu\n9Fernando\n10Maurício\nFelipe\nVitor\n- Kátia\n- Laura\n-Júlia\n-Joaquim\n -Negão\n -Matheusinho\n\n \n  \n-\n";
+// const tempList = "1 - Pedro\n2 - Lucas\n3- João\n4- Marcos\n5 -Paula\n6 -Secão\n7 Gui\n8 Manu\n9Fernando\n10Maurício\nFelipe\nVitor\n- Kátia\n- Laura\n-Júlia\n-Joaquim\n -Negão\n -Matheusinho\n\n \n  \n-\n";
 
 const List = (props: IList) => {
 
@@ -82,7 +82,7 @@ const List = (props: IList) => {
 
     const inputName = useRef(null);
 
-    const [list, setList] = useState<any>(tempList);
+    const [list, setList] = useState<any>("");
     const [name, setName] = useState<string>("");
 
     const addPlayer = () => {

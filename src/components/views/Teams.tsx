@@ -56,7 +56,7 @@ const Teams = () => {
                                             key={`ul${i}`}
                                         >
                                             {teams[i] && teams[i].map(player => (
-                                                <li>
+                                                <li key={`li%{i}`}>
                                                     {player.name}
                                                 </li>
                                             ))}

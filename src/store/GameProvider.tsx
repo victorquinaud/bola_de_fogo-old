@@ -97,7 +97,7 @@ export const GameProvider = ({ children }) => {
             dispatch({ type: "setTeams", payload: { teams } });
         };
 
-    }, [state.players, state.options.vs]);
+    }, [state.players, state.options.vs, state]);
 
     return (
         <GameContext.Provider
