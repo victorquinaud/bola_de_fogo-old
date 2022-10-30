@@ -15,9 +15,7 @@ const Game = () => {
     const [vs, setVs] = useState<number>();
     const [list, setList] = useState<string[]>([]);
     const [random, setRandom] = useState<boolean>(false);
-    console.log(random)
 
-    // useEffect(() => {
     const submit = () => {
         if (list.length && vs) {
             setGame({ list, options: { vs, random } });
@@ -25,22 +23,21 @@ const Game = () => {
         } else
             console.log("submith failed");
     };
-    // }, []);
 
     return (
         <div className='Game flex flex-col'>
             <div className='flex justify-around bg-gray-500'>
                 <div className='flex flex-col'>
-                    <h2 className='text-center'>Versus</h2>
+                    <h2 className='text-center'>VERSUS</h2>
                     
-                    <div className='flex gap-1'>
-                        <input type="radio" name="vs" value={vs} onChange={_ => setVs(4)} /> 4vs4
-                        <input type="radio" name="vs" value={vs} onChange={_ => setVs(5)} /> 5vs5
+                    <div className='font-xl'>
+                        <input type="radio" name="vs" value={vs} onChange={_ => setVs(4)} /> <span>4vs4</span>
+                        <input type="radio" name="vs" value={vs} onChange={_ => setVs(5)} className="ml-5" /> <span>5vs5</span>
                     </div>
                 </div>
 
                 <div className='flex flex-col'>
-                    <h2 className='text-center'>Random</h2>
+                    <h2 className='text-center mb-1'>ALEATÓRIO</h2>
                     <input type="checkbox" onChange={e => setRandom(e.target.checked)} />
                 </div>
             </div>
@@ -49,9 +46,9 @@ const Game = () => {
 
             <button
                 onClick={submit}
-                className="py-4 bg-sky-600 text-white active:bg-sky-500"
+                className="py-4 bg-sky-700 text-white active:bg-sky-500"
             >
-                Iniciar
+                INICIAR
             </button>
         </div>
     );

@@ -43,6 +43,8 @@ export const reducer: Reducer<IGame, IAction> = (state, action) => {
             return { ...state, ...action.payload };
         case "setTeams":
             return { ...state, ...action.payload };
+        case "reorderList":
+            return { ...state, ...action.payload };
         default:
             return { ...state };
     };
@@ -75,7 +77,7 @@ export const GameProvider = ({ children }) => {
 
     useEffect(() => {
         // set teams
-        const { players } = state;
+        const players = state.players;
         const vs = state.options.vs;
 
         if (players && vs) {
@@ -97,7 +99,24 @@ export const GameProvider = ({ children }) => {
             dispatch({ type: "setTeams", payload: { teams } });
         };
 
-    }, [state.players, state.options.vs, state]);
+    }, [state.players, state.options.vs]);
+
+    const reorderList = (players: IPlayer[]): void => {
+        const playing = [];
+        const noPlaying = [];
+        
+        players.forEach(player => {
+            if (player.playing) {
+                playing.push(player.name);
+            } else {
+                noPlaying.push(player.name);
+            };
+        });
+
+        const list = [...playing, ...noPlaying];
+
+        dispatch({ type: "reorderList", payload: { list } })
+    };
 
     return (
         <GameContext.Provider
@@ -106,6 +125,7 @@ export const GameProvider = ({ children }) => {
                 visible,
                 setVisible,
                 setGame,
+                reorderList
             }}
         >
             {children}

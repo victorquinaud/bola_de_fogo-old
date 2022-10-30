@@ -18,12 +18,12 @@ const Players = () => {
             <ul>
                 {players?.map((player, i) =>
                     <li
-                        key={player.name}
+                        key={`players${player.name}`}
                         className={`
                             ${i % 2 === 0 ? "bg-sky-100" : "bg-sky-50"}
                             pl-4
                         `}
-                    >Nome: {player.name}</li>
+                    >{`${i + 1}: ${player.name}`}</li>
                 )}
             </ul>
         </div>

@@ -13,7 +13,10 @@ const Content = (props: any) => {
     const { visible, setVisible } = useContext(GameContext);
 
     return (
-        <div className='w-screen mx-5 bg-gray-100 rounded-md flex flex-col overflow-hidden' >
+        <div className={`
+            w-screen max-w-screen-sm mx-5 rounded-md flex flex-col overflow-hidden
+            bg-gray-100 shadow-xl
+        `} >
             <Title title={visible} />
 
             <div className={`${visible !== "game" ? "hidden" : ""}`}>

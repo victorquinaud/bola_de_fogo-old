@@ -1,4 +1,4 @@
-import { useContext, useState, useMemo, useEffect } from "react";
+import { useContext, useState } from "react";
 import { GameContext } from "../../store/GameProvider";
 
 const Payment = () => {
@@ -11,7 +11,7 @@ const Payment = () => {
     return (
         <div className="flex flex-col">
             <div className="flex justify-center text-xl my-2">
-                <h3>Valor</h3>
+                <h3>VALOR:</h3>
                 <input
                     type="number"
                     prefix="R$ "
@@ -25,7 +25,7 @@ const Payment = () => {
 
             <table>
                 <thead>
-                    <tr className="bg-sky-300 flex justify-between px-4">
+                    <tr className="bg-sky-300 flex justify-between pl-4 pr-6">
                         <th>NOME</th>
                         <th>PAGO</th>
                     </tr>
@@ -36,7 +36,7 @@ const Payment = () => {
                             key={player.name}
                             className={`
                                 ${i % 2 === 0 ? "bg-sky-100" : "bg-sky-50"}
-                                text-xl flex justify-between px-4
+                                text-xl flex justify-between pl-4 pr-10
                             `}
                         >
                             <td key={`td${player.name}`}>{player.name}</td>
